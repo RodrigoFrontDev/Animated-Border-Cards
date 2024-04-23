@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    gap: 5vw;
+}
+
+/***** First Card *****/
+
+.animated_card, .animated_card2 {
+    display: grid;
+    place-items: center;
+    position: relative;
+    height: 500px;
+    width: 350px;
+    background: #222;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+}
+
+.animated_card::before {
+    position: absolute;
+    content: '';
+    height: 500px;
+    width: 350px;
+    background: tomato;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    z-index: -1;
+    transition: 0.3;
+    -webkit-transition: 0.3;
+    -moz-transition: 0.3;
+    -ms-transition: 0.3;
+    -o-transition: 0.3;
+    animation: animate 2s linear infinite;
+    -webkit-animation: animate 2s linear infinite;
+}
+
+.animated_card:hover::before {
+    height: 512px;
+    width: 362px;
+}
+
+.fa-html5 {
+    color: #e44d26;
+}
+
+span {
+    color: rgba(254, 254, 254, 0.1);
+    font-size: 10em;
+    z-index: 10;
+}
+
+@keyframes animate {
+    50% {
+        filter: hue-rotate(350deg);
+        -webkit-filter: hue-rotate(350deg);
+}
+}
+
+/***** Second Card *****/
+
+.animated_card2 {
+    overflow: hidden;
+}
+
+.animated_card2::before {
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 180%;
+    background: #fff;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+.animated_card2:hover::before {
+    animation: animate2 2s linear infinite;
+    -webkit-animation: animate2 2s linear infinite;
+}
+
+.fa-css3-alt {
+    color: #0277bd;
+}
+
+@keyframes animate2 {
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
+
+.animated_card2::after {
+    position: absolute;
+    content: '';
+    inset: 5px;
+    background: #222;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
